@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dmd8u2a2ifywu"
+path="res://.godot/imported/Exploration6 - Tropical Island.ogg-cfc6ef4362a0d1ff22b64fe77e703568.oggvorbisstr"
+
+[deps]
+
+source_file="res://Tools/Audio/JRPG_SubspaceAudio_CC0/Exploration6 - Tropical Island.ogg"
+dest_files=["res://.godot/imported/Exploration6 - Tropical Island.ogg-cfc6ef4362a0d1ff22b64fe77e703568.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

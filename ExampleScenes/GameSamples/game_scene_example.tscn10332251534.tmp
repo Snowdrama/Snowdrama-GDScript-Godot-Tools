@@ -1,0 +1,471 @@
+[gd_scene load_steps=13 format=3 uid="uid://qcsi8itb3pvc"]
+
+[ext_resource type="Script" uid="uid://b842l2y24lqaq" path="res://Scripts/SceneManagement/game_scene.gd" id="1_mvac2"]
+[ext_resource type="Script" uid="uid://61ry8047i8v2" path="res://Scripts/UIRouting/Common/pause_menu_toggle.gd" id="2_1bxhj"]
+[ext_resource type="Resource" uid="uid://df3khd1h4rk71" path="res://Scripts/UIRouting/ExampleResources/pause_menu_router_example.tres" id="3_rik0c"]
+[ext_resource type="Script" uid="uid://bgftnwjdgcsm7" path="res://Scripts/UIRouting/ui_route.gd" id="4_1bxhj"]
+[ext_resource type="Script" uid="uid://ynkomd4oe1kg" path="res://Scripts/UIRouting/Buttons/ui_close_all_routes_button.gd" id="5_hgagt"]
+[ext_resource type="Script" uid="uid://cju10up383l6q" path="res://Scripts/UIRouting/Buttons/ui_open_route_button.gd" id="6_fjyg4"]
+[ext_resource type="Script" uid="uid://020go2coweop" path="res://Scripts/Options/OptionInputScripts/VolumeSlider.gd" id="7_7ccin"]
+[ext_resource type="Script" uid="uid://xbnqvou2ejce" path="res://Scripts/UIRouting/Buttons/ui_back_button.gd" id="8_g7l8x"]
+[ext_resource type="Script" uid="uid://by6kq5rplgj1n" path="res://Scripts/UIRouting/Buttons/ui_exit_game_button.gd" id="9_1bxhj"]
+[ext_resource type="Script" uid="uid://bqmf2o1t61e0" path="res://Scripts/SceneManagement/go_to_scene_button.gd" id="9_rik0c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4r4p"]
+bg_color = Color(0.804688, 0.483516, 0.501536, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7l7mv"]
+bg_color = Color(0.804688, 0.288469, 0.276462, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="GameSceneExample" type="Node"]
+script = ExtResource("1_mvac2")
+
+[node name="PauseMenu" type="Node" parent="."]
+script = ExtResource("2_1bxhj")
+router = ExtResource("3_rik0c")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PauseMenu"]
+
+[node name="Pause" type="Node" parent="PauseMenu/CanvasLayer" node_paths=PackedStringArray("route_content")]
+script = ExtResource("4_1bxhj")
+router = ExtResource("3_rik0c")
+route_name = "pause"
+route_content = NodePath("PauseMenuPanel")
+
+[node name="PauseMenuPanel" type="Panel" parent="PauseMenu/CanvasLayer/Pause"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/CanvasLayer/Pause/PauseMenuPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PauseMenu/CanvasLayer/Pause/PauseMenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Pause Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="PauseMenu/CanvasLayer/Pause/PauseMenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Back"
+script = ExtResource("5_hgagt")
+router = ExtResource("3_rik0c")
+
+[node name="OptionsButton" type="Button" parent="PauseMenu/CanvasLayer/Pause/PauseMenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Options"
+script = ExtResource("6_fjyg4")
+router = ExtResource("3_rik0c")
+route_name = "options"
+
+[node name="ExitToMenu" type="Button" parent="PauseMenu/CanvasLayer/Pause/PauseMenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Exit To Menu"
+script = ExtResource("6_fjyg4")
+router = ExtResource("3_rik0c")
+route_name = "exit_menu_confirm"
+
+[node name="ExitGame" type="Button" parent="PauseMenu/CanvasLayer/Pause/PauseMenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Exit Game"
+script = ExtResource("6_fjyg4")
+router = ExtResource("3_rik0c")
+route_name = "exit_game_confirm"
+
+[node name="Options" type="Node" parent="PauseMenu/CanvasLayer" node_paths=PackedStringArray("route_content")]
+script = ExtResource("4_1bxhj")
+router = ExtResource("3_rik0c")
+route_name = "options"
+route_content = NodePath("OptionsPanel")
+
+[node name="OptionsPanel" type="Panel" parent="PauseMenu/CanvasLayer/Options"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/CanvasLayer/Options/OptionsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PauseMenu/CanvasLayer/Options/OptionsPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Options (Changes are automatically saved!)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioOptions" type="Button" parent="PauseMenu/CanvasLayer/Options/OptionsPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Audio Options"
+script = ExtResource("6_fjyg4")
+router = ExtResource("3_rik0c")
+route_name = "audio"
+
+[node name="GraphicsOptions" type="Button" parent="PauseMenu/CanvasLayer/Options/OptionsPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Graphics Options"
+script = ExtResource("6_fjyg4")
+router = ExtResource("3_rik0c")
+route_name = "graphics"
+
+[node name="ControlsOptions" type="Button" parent="PauseMenu/CanvasLayer/Options/OptionsPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Controls Options"
+script = ExtResource("6_fjyg4")
+router = ExtResource("3_rik0c")
+route_name = "controls"
+
+[node name="ReturnButton" type="Button" parent="PauseMenu/CanvasLayer/Options/OptionsPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Back"
+script = ExtResource("8_g7l8x")
+router = ExtResource("3_rik0c")
+
+[node name="ExitGameConfirm" type="Node" parent="PauseMenu/CanvasLayer" node_paths=PackedStringArray("route_content")]
+script = ExtResource("4_1bxhj")
+router = ExtResource("3_rik0c")
+route_name = "exit_game_confirm"
+route_content = NodePath("ExitConfirmPanel")
+
+[node name="ExitConfirmPanel" type="Panel" parent="PauseMenu/CanvasLayer/ExitGameConfirm"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/CanvasLayer/ExitGameConfirm/ExitConfirmPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PauseMenu/CanvasLayer/ExitGameConfirm/ExitConfirmPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Exit and close the game?
+
+Unsaved Progress will be lost!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/CanvasLayer/ExitGameConfirm/ExitConfirmPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ExitGameButton" type="Button" parent="PauseMenu/CanvasLayer/ExitGameConfirm/ExitConfirmPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/hover = SubResource("StyleBoxFlat_v4r4p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7l7mv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l7mv")
+text = "Exit Game"
+script = ExtResource("9_1bxhj")
+
+[node name="BackButton" type="Button" parent="PauseMenu/CanvasLayer/ExitGameConfirm/ExitConfirmPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Back To Game"
+script = ExtResource("8_g7l8x")
+router = ExtResource("3_rik0c")
+
+[node name="ExitMenuConfirm" type="Node" parent="PauseMenu/CanvasLayer" node_paths=PackedStringArray("route_content")]
+script = ExtResource("4_1bxhj")
+router = ExtResource("3_rik0c")
+route_name = "exit_menu_confirm"
+route_content = NodePath("ExitMenuConfirmPanel")
+
+[node name="ExitMenuConfirmPanel" type="Panel" parent="PauseMenu/CanvasLayer/ExitMenuConfirm"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/CanvasLayer/ExitMenuConfirm/ExitMenuConfirmPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PauseMenu/CanvasLayer/ExitMenuConfirm/ExitMenuConfirmPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Exit game and return to the main menu?
+
+Unsaved Progress will be lost!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/CanvasLayer/ExitMenuConfirm/ExitMenuConfirmPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ExitToMenuButton" type="Button" parent="PauseMenu/CanvasLayer/ExitMenuConfirm/ExitMenuConfirmPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/hover = SubResource("StyleBoxFlat_v4r4p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7l7mv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l7mv")
+text = "Exit Game"
+script = ExtResource("9_rik0c")
+target_scene_name = "MainMenuExample"
+
+[node name="BackButton" type="Button" parent="PauseMenu/CanvasLayer/ExitMenuConfirm/ExitMenuConfirmPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Back To Game"
+script = ExtResource("8_g7l8x")
+router = ExtResource("3_rik0c")
+
+[node name="AudioOptions" type="Node" parent="PauseMenu/CanvasLayer" node_paths=PackedStringArray("route_content")]
+script = ExtResource("4_1bxhj")
+router = ExtResource("3_rik0c")
+route_name = "audio"
+route_content = NodePath("AudioPanel")
+
+[node name="AudioPanel" type="Panel" parent="PauseMenu/CanvasLayer/AudioOptions"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/CanvasLayer/AudioOptions/AudioPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PauseMenu/CanvasLayer/AudioOptions/AudioPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Audio Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="PauseMenu/CanvasLayer/AudioOptions/AudioPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="PauseMenu/CanvasLayer/AudioOptions/AudioPanel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="PauseMenu/CanvasLayer/AudioOptions/AudioPanel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("7_7ccin")
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="PauseMenu/CanvasLayer/AudioOptions/AudioPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="PauseMenu/CanvasLayer/AudioOptions/AudioPanel/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="PauseMenu/CanvasLayer/AudioOptions/AudioPanel/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("7_7ccin")
+option_key = 1
+
+[node name="VBoxContainer3" type="HBoxContainer" parent="PauseMenu/CanvasLayer/AudioOptions/AudioPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="PauseMenu/CanvasLayer/AudioOptions/AudioPanel/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Sound Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="PauseMenu/CanvasLayer/AudioOptions/AudioPanel/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("7_7ccin")
+option_key = 2
+
+[node name="VBoxContainer4" type="HBoxContainer" parent="PauseMenu/CanvasLayer/AudioOptions/AudioPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="PauseMenu/CanvasLayer/AudioOptions/AudioPanel/VBoxContainer/VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Voice Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="PauseMenu/CanvasLayer/AudioOptions/AudioPanel/VBoxContainer/VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("7_7ccin")
+option_key = 3
+
+[node name="ReturnButton" type="Button" parent="PauseMenu/CanvasLayer/AudioOptions/AudioPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Back"
+script = ExtResource("8_g7l8x")
+router = ExtResource("3_rik0c")
+
+[node name="GraphicsOptions" type="Node" parent="PauseMenu/CanvasLayer" node_paths=PackedStringArray("route_content")]
+script = ExtResource("4_1bxhj")
+router = ExtResource("3_rik0c")
+route_name = "graphics"
+route_content = NodePath("GraphicsPanel")
+
+[node name="GraphicsPanel" type="Panel" parent="PauseMenu/CanvasLayer/GraphicsOptions"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/CanvasLayer/GraphicsOptions/GraphicsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PauseMenu/CanvasLayer/GraphicsOptions/GraphicsPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Graphics Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="PauseMenu/CanvasLayer/GraphicsOptions/GraphicsPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Back"
+script = ExtResource("8_g7l8x")
+router = ExtResource("3_rik0c")
+
+[node name="ControlsOptions" type="Node" parent="PauseMenu/CanvasLayer" node_paths=PackedStringArray("route_content")]
+script = ExtResource("4_1bxhj")
+router = ExtResource("3_rik0c")
+route_name = "controls"
+route_content = NodePath("ControlsPanel")
+
+[node name="ControlsPanel" type="Panel" parent="PauseMenu/CanvasLayer/ControlsOptions"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/CanvasLayer/ControlsOptions/ControlsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PauseMenu/CanvasLayer/ControlsOptions/ControlsPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Control Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="PauseMenu/CanvasLayer/ControlsOptions/ControlsPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Back"
+script = ExtResource("8_g7l8x")
+router = ExtResource("3_rik0c")

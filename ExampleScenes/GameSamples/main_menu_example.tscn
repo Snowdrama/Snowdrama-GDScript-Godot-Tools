@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://py33opxx7f1s"]
+
+[ext_resource type="Script" uid="uid://b842l2y24lqaq" path="res://Tools/SceneManagement/game_scene.gd" id="1_r2mop"]
+[ext_resource type="Script" uid="uid://bqmf2o1t61e0" path="res://Tools/SceneManagement/go_to_scene_button.gd" id="2_vjxn5"]
+[ext_resource type="Script" uid="uid://by6kq5rplgj1n" path="res://Tools/UIRouting/Buttons/ui_exit_game_button.gd" id="3_iiugm"]
+
+[node name="MainMenuExample" type="Node"]
+script = ExtResource("1_r2mop")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 111
+text = "Some Game!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Play Game"
+script = ExtResource("2_vjxn5")
+target_scene_name = "GameSceneExample"
+
+[node name="ExitGame" type="Button" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Exit Game"
+script = ExtResource("3_iiugm")

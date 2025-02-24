@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://rva3xuv6h4iv"
+path="res://.godot/imported/Exploration1 - Grasslands.ogg-abf316d2aaba750db1f1ac48a93ba4b3.oggvorbisstr"
+
+[deps]
+
+source_file="res://Tools/Audio/JRPG_SubspaceAudio_CC0/Exploration1 - Grasslands.ogg"
+dest_files=["res://.godot/imported/Exploration1 - Grasslands.ogg-abf316d2aaba750db1f1ac48a93ba4b3.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

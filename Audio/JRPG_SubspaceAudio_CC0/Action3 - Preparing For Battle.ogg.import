@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b7u458msogxe5"
+path="res://.godot/imported/Action3 - Preparing For Battle.ogg-b891d9bf4ac83ad6b8b59995b6dcdc70.oggvorbisstr"
+
+[deps]
+
+source_file="res://Tools/Audio/JRPG_SubspaceAudio_CC0/Action3 - Preparing For Battle.ogg"
+dest_files=["res://.godot/imported/Action3 - Preparing For Battle.ogg-b891d9bf4ac83ad6b8b59995b6dcdc70.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

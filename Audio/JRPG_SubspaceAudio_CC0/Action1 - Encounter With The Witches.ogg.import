@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://r1jvvt4ptnad"
+path="res://.godot/imported/Action1 - Encounter With The Witches.ogg-fe09c1b0373fbbe90aec65ad39980710.oggvorbisstr"
+
+[deps]
+
+source_file="res://Tools/Audio/JRPG_SubspaceAudio_CC0/Action1 - Encounter With The Witches.ogg"
+dest_files=["res://.godot/imported/Action1 - Encounter With The Witches.ogg-fe09c1b0373fbbe90aec65ad39980710.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
