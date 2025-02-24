@@ -29,10 +29,10 @@ func _ready():
 	
 
 func _enter_tree():
-	MessageSystemExample.audio.set_mixer_value.connect(set_mixer_value)
+	ToolsMessages.audio.set_mixer_value.connect(set_mixer_value)
 	
 func _exit_tree():
-	MessageSystemExample.audio.set_mixer_value.disconnect(set_mixer_value)
+	ToolsMessages.audio.set_mixer_value.disconnect(set_mixer_value)
 	
 func set_mixer_value(mixer_channel:String, value : float):
 	var index = AudioServer.get_bus_index(mixer_channel)

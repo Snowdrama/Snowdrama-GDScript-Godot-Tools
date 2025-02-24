@@ -15,14 +15,14 @@ func _ready():
 		printerr("Music Manager requires using an interactive stream")
 
 func _enter_tree():
-	MessageSystemExample.audio.request_song.connect(request_song)
-	MessageSystemExample.audio.request_override_song.connect(request_override_song)
-	MessageSystemExample.audio.clear_override_song.connect(clear_override_song)
+	ToolsMessages.audio.request_song.connect(request_song)
+	ToolsMessages.audio.request_override_song.connect(request_override_song)
+	ToolsMessages.audio.clear_override_song.connect(clear_override_song)
 	
 func _exit_tree():
-	MessageSystemExample.audio.request_song.disconnect(request_song)
-	MessageSystemExample.audio.request_override_song.disconnect(request_override_song)
-	MessageSystemExample.audio.clear_override_song.disconnect(clear_override_song)
+	ToolsMessages.audio.request_song.disconnect(request_song)
+	ToolsMessages.audio.request_override_song.disconnect(request_override_song)
+	ToolsMessages.audio.clear_override_song.disconnect(clear_override_song)
 	
 func request_song(song_name:String):
 	print("Requesting Song Name: ", song_name)

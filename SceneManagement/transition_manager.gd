@@ -26,7 +26,7 @@ func _process(delta):
 			pass
 		TransitionState.SHOWING_SCREEN: 
 			if current_transition.show_scene(delta):
-				MessageSystemExample.scene_management.scene_transition_complete.emit()
+				ToolsMessages.scene_management.scene_transition_complete.emit()
 				state = TransitionState.NONE
 			pass
 	pass

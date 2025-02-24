@@ -23,11 +23,11 @@ func _ready():
 		sounds.set(sound.resource_name, sound)
 
 func _enter_tree():
-	MessageSystemExample.audio.play_sound_3D.connect(play_sound_3D)
+	ToolsMessages.audio.play_sound_3D.connect(play_sound_3D)
 	pass
 
 func _exit_tree():
-	MessageSystemExample.audio.play_sound_3D.disconnect(play_sound_3D)
+	ToolsMessages.audio.play_sound_3D.disconnect(play_sound_3D)
 	pass
 
 func play_sound_3D(sound_stream:AudioStream, sound_position:Vector3):

@@ -14,14 +14,14 @@ func set_scene_as_current(set_current_scene : Node):
 	current_scene = set_current_scene
 	
 func _enter_tree():
-	MessageSystemExample.scene_management.go_to_scene.connect(go_to_scene)
-	MessageSystemExample.scene_management.set_scene_as_current.connect(set_scene_as_current)
+	ToolsMessages.scene_management.go_to_scene.connect(go_to_scene)
+	ToolsMessages.scene_management.set_scene_as_current.connect(set_scene_as_current)
 	transition_manager.scene_hidden_signal.connect(scene_hidden)
 	pass
 	
 func _exit_tree():
-	MessageSystemExample.scene_management.go_to_scene.disconnect(go_to_scene)
-	MessageSystemExample.scene_management.set_scene_as_current.disconnect(set_scene_as_current)
+	ToolsMessages.scene_management.go_to_scene.disconnect(go_to_scene)
+	ToolsMessages.scene_management.set_scene_as_current.disconnect(set_scene_as_current)
 	pass
 	
 	
