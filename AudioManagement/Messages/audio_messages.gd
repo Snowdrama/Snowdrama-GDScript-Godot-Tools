@@ -6,4 +6,5 @@ signal clear_override_song
 signal play_sound_2D(sound_stream:AudioStream, position:Vector2)
 signal play_sound_3D(sound_stream:AudioStream, position:Vector3)
 
-signal set_mixer_value(mixer_channel:String, value:float)
+signal set_mixer_value(mixer_channel, value:float)
+signal set_mixer_target_value(mixer_channel, value:float)
