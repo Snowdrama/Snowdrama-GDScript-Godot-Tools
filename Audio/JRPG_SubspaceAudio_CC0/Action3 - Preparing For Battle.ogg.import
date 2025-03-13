@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b7u458msogxe5"
-path="res://.godot/imported/Action3 - Preparing For Battle.ogg-b891d9bf4ac83ad6b8b59995b6dcdc70.oggvorbisstr"
+path="res://.godot/imported/Action3 - Preparing For Battle.ogg-b99cbbf33d30ea683e0a61130e6fc2de.oggvorbisstr"
 
 [deps]
 
-source_file="res://Tools/Audio/JRPG_SubspaceAudio_CC0/Action3 - Preparing For Battle.ogg"
-dest_files=["res://.godot/imported/Action3 - Preparing For Battle.ogg-b891d9bf4ac83ad6b8b59995b6dcdc70.oggvorbisstr"]
+source_file="res://tools/Audio/JRPG_SubspaceAudio_CC0/Action3 - Preparing For Battle.ogg"
+dest_files=["res://.godot/imported/Action3 - Preparing For Battle.ogg-b99cbbf33d30ea683e0a61130e6fc2de.oggvorbisstr"]
 
 [params]
 

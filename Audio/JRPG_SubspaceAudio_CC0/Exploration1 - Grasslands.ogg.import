@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://rva3xuv6h4iv"
-path="res://.godot/imported/Exploration1 - Grasslands.ogg-abf316d2aaba750db1f1ac48a93ba4b3.oggvorbisstr"
+path="res://.godot/imported/Exploration1 - Grasslands.ogg-0742dda466851ff30e721d7101214242.oggvorbisstr"
 
 [deps]
 
-source_file="res://Tools/Audio/JRPG_SubspaceAudio_CC0/Exploration1 - Grasslands.ogg"
-dest_files=["res://.godot/imported/Exploration1 - Grasslands.ogg-abf316d2aaba750db1f1ac48a93ba4b3.oggvorbisstr"]
+source_file="res://tools/Audio/JRPG_SubspaceAudio_CC0/Exploration1 - Grasslands.ogg"
+dest_files=["res://.godot/imported/Exploration1 - Grasslands.ogg-0742dda466851ff30e721d7101214242.oggvorbisstr"]
 
 [params]
 

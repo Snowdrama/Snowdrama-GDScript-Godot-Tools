@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://birt78qjqcv16"
-path="res://.godot/imported/Action2 - Army Approaching.ogg-a22ab5e03ea59449bc723ba4d74d5a95.oggvorbisstr"
+path="res://.godot/imported/Action2 - Army Approaching.ogg-be9abb195346401eec2fbc5ae2ca51ca.oggvorbisstr"
 
 [deps]
 
-source_file="res://Tools/Audio/JRPG_SubspaceAudio_CC0/Action2 - Army Approaching.ogg"
-dest_files=["res://.godot/imported/Action2 - Army Approaching.ogg-a22ab5e03ea59449bc723ba4d74d5a95.oggvorbisstr"]
+source_file="res://tools/Audio/JRPG_SubspaceAudio_CC0/Action2 - Army Approaching.ogg"
+dest_files=["res://.godot/imported/Action2 - Army Approaching.ogg-be9abb195346401eec2fbc5ae2ca51ca.oggvorbisstr"]
 
 [params]
 

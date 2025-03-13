@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dmd8u2a2ifywu"
-path="res://.godot/imported/Exploration6 - Tropical Island.ogg-cfc6ef4362a0d1ff22b64fe77e703568.oggvorbisstr"
+path="res://.godot/imported/Exploration6 - Tropical Island.ogg-a5ee1c54cffd783b151f2fa1770bdda5.oggvorbisstr"
 
 [deps]
 
-source_file="res://Tools/Audio/JRPG_SubspaceAudio_CC0/Exploration6 - Tropical Island.ogg"
-dest_files=["res://.godot/imported/Exploration6 - Tropical Island.ogg-cfc6ef4362a0d1ff22b64fe77e703568.oggvorbisstr"]
+source_file="res://tools/Audio/JRPG_SubspaceAudio_CC0/Exploration6 - Tropical Island.ogg"
+dest_files=["res://.godot/imported/Exploration6 - Tropical Island.ogg-a5ee1c54cffd783b151f2fa1770bdda5.oggvorbisstr"]
 
 [params]
 
